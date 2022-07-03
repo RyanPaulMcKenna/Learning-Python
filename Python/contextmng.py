@@ -31,13 +31,14 @@ with lock:
 
 
 class ManagedFile:
-    def __init__(self, filename):
+    def __init__(self, filename, mode):
         print('init')
         self.filename = filename
+        self.mode = mode
     
     def __enter__(self):
         print('enter')
-        self.file = open(self.filename, 'w')
+        self.file = open(self.filename, self.mode)
         return self.file
     def __exit__(self, exc_type, exc_value, exc_traceback):
         if self.file:
@@ -48,7 +49,7 @@ class ManagedFile:
         print('exit')
         return True # prevents with from raising exception
     
-with ManagedFile('notes.txt') as file:
+with ManagedFile('notes.txt','w') as file:
     print('do some stuff...')
     file.write('somet odoo...')
     file.somemethod()

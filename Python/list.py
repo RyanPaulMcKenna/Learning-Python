@@ -1,3 +1,4 @@
+# lists are mutable.
 mylist = ["banana", "cherry", "apple"]
 print(mylist)
 

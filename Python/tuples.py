@@ -1,3 +1,4 @@
+# TUPLES ARE IMMUTABLE, 
 mytuple = ("Max", 28, "Boston")
 mytuple = "Max", 28, "Boston"
 print(mytuple, type(mytuple))
@@ -6,7 +7,7 @@ mytuple = tuple(["Max", 28, "Boston"])
 print(mytuple)
 
 item = mytuple[0] # Max
-item = mytuple[1] # Max
+item = mytuple[1] # 28
 item = mytuple[-1] # Boston
 
  # mytuple[0] = "Tim" error tuples are immutable
